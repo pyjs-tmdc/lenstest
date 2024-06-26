@@ -1,0 +1,16 @@
+user_groups:
+  - name: nonproof_analyst
+    api_scopes:
+      - meta
+      - data
+    includes:
+      - users:id:bhavitavayashrivastava
+      - users:id:shreyanegi
+  - name: default
+    includes: "*"
+    api_scopes:
+      - meta
+      - data
+      - graphql
+      - jobs
+      - source
