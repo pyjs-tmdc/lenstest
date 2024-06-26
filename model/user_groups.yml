@@ -3,6 +3,9 @@ user_groups:
     api_scopes:
       - meta
       - data
+      - graphql
+      - jobs
+      - source
     includes:
       - users:id:piyushjoshi
   - name: default
@@ -10,6 +13,3 @@ user_groups:
     api_scopes:
       - meta
       - data
-      - graphql
-      - jobs
-      - source

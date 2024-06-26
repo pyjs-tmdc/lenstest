@@ -1,6 +1,6 @@
 tables:
   - name: energy_efficiency
-    sql: SELECT * FROM "icebase"."datadogdp"."data_dog_dataset"
+    sql: SELECT * FROM "icebase"."smarthome"."dataset"
     data_source: icebase
     public: true 
 
