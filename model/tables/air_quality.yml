@@ -1,0 +1,17 @@
+tables:
+  - name: air_quality
+    sql: SELECT * FROM "icebase"."datadogdp"."data_dog_dataset"
+    measures:
+      - name: CO_Level
+        sql: "${TABLE}.co"
+        type: "average"
+      - name: AverageTemperature
+        sql: "${TABLE}.temp"
+        type: "average"
+      - name: AverageHumidity
+        sql: "${TABLE}.humidity"
+        type: "average"
+    dimensions:
+      - name: Timestamp
+        sql: "${TABLE}.timestamp"
+        type: "time"

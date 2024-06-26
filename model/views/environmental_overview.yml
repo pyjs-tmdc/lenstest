@@ -1,0 +1,40 @@
+views:
+  - name: environmental_overview
+    sql: >
+      SELECT
+        a.timestamp AS timestamp,
+        a.co AS CO_Level,
+        a.temp AS Temperature,
+        a.humidity AS Humidity,
+        b.light AS LightStatus,
+        (CASE WHEN b.light = true THEN 1 ELSE 0 END) AS LightUsage,
+        a.motion AS MotionDetected
+      FROM
+        "icebase"."datadogdp"."data_dog_dataset" a
+      LEFT JOIN
+        "icebase"."datadogdp"."data_dog_dataset" b ON a.timestamp = b.timestamp
+
+    measures:
+      - name: AverageCO
+        sql: "${TABLE}.CO_Level"
+        type: "average"
+      - name: AverageTemperature
+        sql: "${TABLE}.Temperature"
+        type: "average"
+      - name: AverageHumidity
+        sql: "${TABLE}.Humidity"
+        type: "average"
+      - name: TotalLightUsage
+        sql: "${TABLE}.LightUsage"
+        type: "sum"
+
+    dimensions:
+      - name: Timestamp
+        sql: "${TABLE}.timestamp"
+        type: "time"
+      - name: LightStatus
+        sql: "${TABLE}.LightStatus"
+        type: "boolean"
+      - name: MotionDetected
+        sql: "${TABLE}.MotionDetected"
+        type: "boolean"

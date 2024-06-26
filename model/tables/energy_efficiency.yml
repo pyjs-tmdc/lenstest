@@ -1,0 +1,14 @@
+tables:
+  - name: energy_efficiency
+    sql: SELECT * FROM "icebase"."datadogdp"."data_dog_dataset"
+    measures:
+      - name: LightUsage
+        sql: "CASE WHEN ${TABLE}.light = true THEN 1 ELSE 0 END"
+        type: "sum"
+      - name: AverageTemperature
+        sql: "${TABLE}.temp"
+        type: "average"
+    dimensions:
+      - name: Timestamp
+        sql: "${TABLE}.timestamp"
+        type: "time"
