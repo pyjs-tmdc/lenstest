@@ -4,8 +4,7 @@ user_groups:
       - meta
       - data
     includes:
-      - users:id:bhavitavayashrivastava
-      - users:id:shreyanegi
+      - users:id:piyushjoshi
   - name: default
     includes: "*"
     api_scopes:
