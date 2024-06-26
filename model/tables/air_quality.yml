@@ -1,6 +1,9 @@
 tables:
   - name: air_quality
     sql: SELECT * FROM "icebase"."datadogdp"."data_dog_dataset"
+    data_source: icebase
+    public: true 
+
     measures:
       - name: CO_Level
         sql: "${TABLE}.co"

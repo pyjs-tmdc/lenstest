@@ -1,6 +1,9 @@
 tables:
   - name: energy_efficiency
     sql: SELECT * FROM "icebase"."datadogdp"."data_dog_dataset"
+    data_source: icebase
+    public: true 
+
     measures:
       - name: LightUsage
         sql: "CASE WHEN ${TABLE}.light = true THEN 1 ELSE 0 END"
