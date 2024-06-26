@@ -17,13 +17,13 @@ views:
     measures:
       - name: AverageCO
         sql: "${TABLE}.CO_Level"
-        type: "average"
+        type: avg
       - name: AverageTemperature
         sql: "${TABLE}.Temperature"
-        type: "average"
+        type: avg
       - name: AverageHumidity
         sql: "${TABLE}.Humidity"
-        type: "average"
+        type: avg
       - name: TotalLightUsage
         sql: "${TABLE}.LightUsage"
         type: "sum"

@@ -7,7 +7,7 @@ tables:
         type: "sum"
       - name: AverageTemperature
         sql: "${TABLE}.temp"
-        type: "average"
+        type: avg
     dimensions:
       - name: Timestamp
         sql: "${TABLE}.timestamp"

@@ -4,13 +4,13 @@ tables:
     measures:
       - name: CO_Level
         sql: "${TABLE}.co"
-        type: "average"
+        type: avg
       - name: AverageTemperature
         sql: "${TABLE}.temp"
-        type: "average"
+        type: avg
       - name: AverageHumidity
         sql: "${TABLE}.humidity"
-        type: "average"
+        type: avg
     dimensions:
       - name: Timestamp
         sql: "${TABLE}.timestamp"
